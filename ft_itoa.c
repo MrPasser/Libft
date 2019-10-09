@@ -6,7 +6,7 @@
 /*   By: skrasin <skrasin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/23 20:34:00 by skrasin           #+#    #+#             */
-/*   Updated: 2019/10/06 20:09:28 by skrasin          ###   ########.fr       */
+/*   Updated: 2019/10/08 14:54:36 by skrasin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static size_t	ft_itoa_len(int n)
 	return (len);
 }
 
-static char		*ft_itoa_transfeer(char *s, int len, int n)
+static char		*ft_itoa_transfer(char *s, int len, int n)
 {
 	if (n == -2147483648)
 	{
@@ -53,9 +53,10 @@ char			*ft_itoa(int n)
 
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
+	len = ft_itoa_len(n);
 	if ((s = ft_strnew(len)))
 	{
-		s = ft_itoa_transfeer(s, len, n);
+		s = ft_itoa_transfer(s, len, n);
 		if (n < 0)
 			s[0] = '-';
 		return (s);

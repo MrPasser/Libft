@@ -6,21 +6,23 @@
 /*   By: skrasin <skrasin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 15:12:30 by skrasin           #+#    #+#             */
-/*   Updated: 2019/09/25 19:47:51 by skrasin          ###   ########.fr       */
+/*   Updated: 2019/10/08 15:25:09 by skrasin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <string.h>
 
-void	*ft_memcpy(void *restrict dst, void *restrict src, size_t n)
+void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {
-	void *dstcpy;
+	register unsigned char			*ds;
+	register const unsigned char	*sr;
 
 	if (!dst && !src)
 		return (dst);
-	dstcpy = dst;
+	ds = (unsigned char *)dst;
+	sr = (unsigned char *)src;
 	while (n--)
-		*(unsigned char *)dstcpy++ = *(unsigned char *)src++;
+		*ds++ = *sr++;
 	return (dst);
 }

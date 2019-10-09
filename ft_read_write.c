@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdel.c                                        :+:      :+:    :+:   */
+/*   ft_read_write.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skrasin <skrasin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/20 16:00:03 by skrasin           #+#    #+#             */
-/*   Updated: 2019/10/03 22:57:21 by skrasin          ###   ########.fr       */
+/*   Created: 2019/10/09 15:31:08 by skrasin           #+#    #+#             */
+/*   Updated: 2019/10/09 15:36:03 by skrasin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <string.h>
+#include <unistd.h>
 #include <stdlib.h>
 
-void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
-{
-	t_list *tmp;
+#define BUFF_SIZE (4096)
+#define COUNT_SIZE (1024)
 
-	if (alst && *alst)
-		while (*alst)
-		{
-			tmp = (*alst)->next;
-			del((*alst)->content, (*alst)->content_size);
-			free(*alst);
-			*alst = tmp;
-		}
+void			ft_read_write(int fd)
+{
+	char		buf[BUFF_SIZE];
+	size_t		count;
+	ssize_t		len;
+
+	count = COUNT_SIZE;
+	len = 1;
+	while (len)
+	{
+		len = read(fd, buf, count);
+		write(STDOUT_FILENO, buf, len);
+	}
+	write(STDOUT_FILENO, "\n", 1);
 }

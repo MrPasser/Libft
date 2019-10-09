@@ -6,7 +6,7 @@
 #    By: skrasin <skrasin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/04 15:46:13 by skrasin           #+#    #+#              #
-#    Updated: 2019/10/05 22:01:45 by skrasin          ###   ########.fr        #
+#    Updated: 2019/10/09 15:48:48 by skrasin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,8 @@ SOURCES = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 			ft_strjoin.c ft_strmap.c ft_strmapi.c ft_strnequ.c ft_strnew.c \
 			ft_strsplit.c ft_strsub.c ft_strtrim.c ft_putstr.c ft_lstnew.c \
 			ft_lstadd.c ft_lstiter.c ft_lstmap.c ft_lstdel.c ft_lstdelone.c \
-			ft_lstrev.c
+			ft_lstrev.c ft_display_file.c ft_read_write.c ft_print_bits.c \
+			ft_swap_p.c
 OBJECTS = $(SOURCES:.c=.o)
 INCLUDES = -I libft.h
 

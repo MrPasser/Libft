@@ -6,7 +6,7 @@
 /*   By: skrasin <skrasin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 13:21:05 by skrasin           #+#    #+#             */
-/*   Updated: 2019/10/07 18:48:32 by skrasin          ###   ########.fr       */
+/*   Updated: 2019/10/08 15:34:19 by skrasin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 size_t	ft_strlen(const char *str)
 {
-	size_t	n;
+	register const char *s;
 
-	n = 0;
-	while (str[n++])
-		continue ;
-	return (--n);
+	s = str;
+	while (*s)
+		++s;
+	return (s - str);
 }

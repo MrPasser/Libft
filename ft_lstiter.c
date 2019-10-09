@@ -6,7 +6,7 @@
 /*   By: skrasin <skrasin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/20 17:49:52 by skrasin           #+#    #+#             */
-/*   Updated: 2019/10/03 23:00:18 by skrasin          ###   ########.fr       */
+/*   Updated: 2019/10/08 14:37:19 by skrasin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@ void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 	while (lst)
 	{
 		f(lst);
-		lst = lst->next;
+		lst = (*lst).next;
 	}
 }
