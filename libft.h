@@ -6,7 +6,7 @@
 /*   By: skrasin <skrasin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 11:33:08 by skrasin           #+#    #+#             */
-/*   Updated: 2019/10/09 15:49:28 by skrasin          ###   ########.fr       */
+/*   Updated: 2019/11/15 18:52:59 by skrasin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s);
 char				**ft_strsplit(char const *s, char c);
 char				*ft_itoa(int n);
+int					ft_isupper(int c);
+int					ft_islower(int c);
 
 typedef struct		s_list
 {

@@ -6,12 +6,12 @@
 /*   By: skrasin <skrasin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 17:38:04 by skrasin           #+#    #+#             */
-/*   Updated: 2019/10/08 14:35:44 by skrasin          ###   ########.fr       */
+/*   Updated: 2019/11/19 14:38:44 by skrasin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
+#include <stdlib.h>
 
 void	ft_bzero(void *s, size_t n)
 {

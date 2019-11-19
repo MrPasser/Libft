@@ -1,30 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_islower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skrasin <skrasin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/18 11:08:12 by skrasin           #+#    #+#             */
-/*   Updated: 2019/11/19 15:01:23 by skrasin          ###   ########.fr       */
+/*   Created: 2019/11/15 18:53:12 by skrasin           #+#    #+#             */
+/*   Updated: 2019/11/15 18:53:49 by skrasin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int		ft_islower(int c)
 {
-	const unsigned char	*c_p;
-	const uintmax_t		*lw_pl;
-	uintmax_t			r_1;
-	uintmax_t			r_c;
-	unsigned char		c_in;
-
-	c_in = (unsigned char)c;
-	c_p = (const unsigned char *)s;
-	while (n-- > 0 && (size_t)c_p % sizeof(uintmax_t) != 0)
-		if (*c_p++ == c_in)
-			return ((void *)--c_p);
-	return (NULL);
+	return (c < 123 && c > 96);
 }
