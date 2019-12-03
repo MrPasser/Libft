@@ -6,7 +6,7 @@
 /*   By: skrasin <skrasin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 11:33:08 by skrasin           #+#    #+#             */
-/*   Updated: 2019/11/19 15:18:27 by skrasin          ###   ########.fr       */
+/*   Updated: 2019/12/03 15:48:17 by skrasin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,5 +93,7 @@ void				ft_display_file(const char *name);
 void				ft_read_write(int fd);
 void				ft_print_bits(unsigned char octet);
 void				ft_swap_p(int **a, int **b);
+
+int					get_next_line(const int fd, char **line);
 
 #endif

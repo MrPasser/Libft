@@ -6,15 +6,14 @@
 /*   By: skrasin <skrasin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/03 15:00:39 by skrasin           #+#    #+#             */
-/*   Updated: 2019/12/03 15:04:47 by skrasin          ###   ########.fr       */
+/*   Updated: 2019/12/03 15:48:03 by skrasin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <string.h>
 #include <unistd.h>
-#define BUFF_SIZE (4096)
-#define CONT (node->content)
+#define BUFF_SIZE 4096
 
 static t_list	*ft_lstsearch(size_t content_size)
 {
@@ -71,16 +70,17 @@ int				get_next_line(const int fd, char **line)
 
 	if (fd < 0 || !line || read(fd, 0, 0) || !(node = ft_lstsearch(fd)))
 		return (-1);
-	while (!(nl = ft_strchr(CONT, '\n')))
+	while (!(nl = ft_strchr(node->content, '\n')))
 	{
 		if ((len = read(fd, buf, BUFF_SIZE)) <= 0)
 			break ;
 		buf[len] = '\0';
-		ft_strextend((char **)&CONT, buf);
+		ft_strextend((char **)&node->content, buf);
 	}
-	*line = nl ? ft_strsub(CONT, 0, nl - (char *)CONT) : ft_strdup(CONT);
-	*(char *)CONT = '\0';
-	nl ? ft_strextend((char **)&CONT, nl + 1) :
-									ft_strextend((char **)&CONT, CONT);
+	*line = nl ? ft_strsub(node->content, 0, nl - (char *)node->content) :
+					ft_strdup(node->content);
+	*(char *)node->content = '\0';
+	nl ? ft_strextend((char **)&node->content, nl + 1) :
+		ft_strextend((char **)&node->content, node->content);
 	return ((**line == '\0' && !len) ? 0 : 1);
 }

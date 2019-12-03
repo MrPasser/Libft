@@ -6,7 +6,7 @@
 /*   By: skrasin <skrasin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 15:14:30 by skrasin           #+#    #+#             */
-/*   Updated: 2019/10/09 15:55:01 by skrasin          ###   ########.fr       */
+/*   Updated: 2019/12/03 15:32:42 by skrasin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-#define BUFF_SIZE (4096)
-#define COUNT_SIZE (4096)
+#define BUFF_SIZE 4096
+#define COUNT_SIZE 4096
 
 static void		ft_read_write(int fd)
 {
