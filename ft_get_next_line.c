@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   ft_get_next_line.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skrasin <skrasin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/03 15:00:39 by skrasin           #+#    #+#             */
-/*   Updated: 2019/12/03 15:48:03 by skrasin          ###   ########.fr       */
+/*   Updated: 2019/12/03 16:38:31 by skrasin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static char		*ft_strextend(char **dst, char const *src)
 	return (*dst);
 }
 
-int				get_next_line(const int fd, char **line)
+int				ft_get_next_line(const int fd, char **line)
 {
 	ssize_t			len;
 	t_list			*node;
