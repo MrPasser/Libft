@@ -6,12 +6,12 @@
 /*   By: skrasin <skrasin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/18 11:08:12 by skrasin           #+#    #+#             */
-/*   Updated: 2019/11/20 11:32:01 by skrasin          ###   ########.fr       */
+/*   Updated: 2020/01/20 15:45:46 by skrasin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
+#include <stddef.h>
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

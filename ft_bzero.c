@@ -6,14 +6,34 @@
 /*   By: skrasin <skrasin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 17:38:04 by skrasin           #+#    #+#             */
-/*   Updated: 2019/11/19 14:38:44 by skrasin          ###   ########.fr       */
+/*   Updated: 2020/01/09 18:48:09 by skrasin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
+#include <stddef.h>
 
 void	ft_bzero(void *s, size_t n)
 {
-	ft_memset(s, 0, n);
+	while (n)
+	{
+		if (n >= 8)
+		{
+			*(long *)s &= 0x00;
+			s += 8;
+			n -= 8;
+		}
+		else if (n >= 4)
+		{
+			*(int *)s &= 0x00;
+			s += 4;
+			n -= 4;
+		}
+		else
+		{
+			*(char *)s &= 0x00;
+			s += 1;
+			n -= 1;
+		}
+	}
 }

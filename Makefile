@@ -6,14 +6,14 @@
 #    By: skrasin <skrasin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/04 15:46:13 by skrasin           #+#    #+#              #
-#    Updated: 2019/12/03 16:32:52 by skrasin          ###   ########.fr        #
+#    Updated: 2020/01/20 16:00:53 by skrasin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 CC = gcc
 AR = ar
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -O3
 ARFLAGS = rcs
 SOURCES = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 			ft_isdigit.c ft_isprint.c ft_memccpy.c ft_memchr.c ft_memcmp.c \
