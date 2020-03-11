@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_amount_of_numbers.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skrasin <skrasin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/19 14:58:27 by skrasin           #+#    #+#             */
-/*   Updated: 2020/03/11 12:59:22 by skrasin          ###   ########.fr       */
+/*   Created: 2020/03/11 12:50:37 by skrasin           #+#    #+#             */
+/*   Updated: 2020/03/11 12:58:15 by skrasin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
 #include <stddef.h>
 
-void	*ft_memalloc(size_t size)
+size_t	ft_num_dig(long int n, int base)
 {
-	void *f;
+	size_t	len;
 
-	if ((f = malloc(size * sizeof(void)) != (void *)0))
-		return (NULL);
-	ft_bzero(f, size);
-	return (f);
+	len = (n <= 0) ? 1 : 0;
+	while (n)
+	{
+		n /= base;
+		len++;
+	}
+	return (len);
 }
