@@ -6,15 +6,15 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 16:21:07 by skrasin           #+#    #+#             */
-/*   Updated: 2020/05/05 14:55:00 by svet             ###   ########.fr       */
+/*   Updated: 2020/05/14 14:19:18 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_memory.h"
 
-static void	*ft_bytememset(void *d, int c, size_t len)
+static inline void	*ft_bytememset(void *d, int c, size_t len)
 {
-	unsigned char *dst;
+	register unsigned char *dst;
 
 	dst = d;
 	while (len-- != 0)
@@ -22,40 +22,45 @@ static void	*ft_bytememset(void *d, int c, size_t len)
 	return (dst);
 }
 
-static void	*ft_longalignmemset(void *dst, int c, size_t *l)
+static inline void	*ft_optalignmemset(void *dst, int c, size_t *l)
 {
-	const size_t xl = (uintptr_t)dst & (sizeof(size_t) - 1);
+	size_t xl;
 
-	*l -= xl;
-	return (ft_bytememset(dst, c, xl));
+	if ((xl = ft_optmemalign(dst)) != 0)
+	{
+		*l -= xl;
+		return (ft_bytememset(dst, c, xl));
+	}
+	else
+		return (dst);
 }
 
-static void	*ft_longmemset(void *dst, int c, size_t *l)
+static inline void	*ft_optmemset(void *dst, int c, size_t *l)
 {
-	size_t				xl;
-	const unsigned long	rep_c = ft_repcset(c);
+	register size_t				xl;
+	register const unsigned OP_T	rep_c = ft_repcset(c);
 
-	dst = ft_longalignmemset(dst, c, l);
-	xl = *l / (sizeof(long) * 8);
+	dst = ft_optalignmemset(dst, c, l);
+	xl = *l / (OPT_SIZE * 8);
 	while (xl-- != 0)
 	{
-		((uintptr_t *)dst)[0] = rep_c;
-		((uintptr_t *)dst)[1] = rep_c;
-		((uintptr_t *)dst)[2] = rep_c;
-		((uintptr_t *)dst)[3] = rep_c;
-		((uintptr_t *)dst)[4] = rep_c;
-		((uintptr_t *)dst)[5] = rep_c;
-		((uintptr_t *)dst)[6] = rep_c;
-		((uintptr_t *)dst)[7] = rep_c;
-		dst += 8 * sizeof(long);
+		((unsigned OP_T *)dst)[0] = rep_c;
+		((unsigned OP_T *)dst)[1] = rep_c;
+		((unsigned OP_T *)dst)[2] = rep_c;
+		((unsigned OP_T *)dst)[3] = rep_c;
+		((unsigned OP_T *)dst)[4] = rep_c;
+		((unsigned OP_T *)dst)[5] = rep_c;
+		((unsigned OP_T *)dst)[6] = rep_c;
+		((unsigned OP_T *)dst)[7] = rep_c;
+		dst += 8 * OPT_SIZE;
 	}
-	xl = (*l & (sizeof(long) * 8 - 1)) / sizeof(long);
+	xl = (*l & (OPT_SIZE * 8 - 1)) / OPT_SIZE;
 	while (xl-- != 0)
 	{
-		((uintptr_t *)dst)[0] = rep_c;
-		dst += sizeof(long);
+		((unsigned OP_T *)dst)[0] = rep_c;
+		dst += OPT_SIZE;
 	}
-	*l &= sizeof(long) - 1;
+	*l &= OPT_MASK;
 	return (dst);
 }
 
@@ -66,8 +71,8 @@ void		*ft_memset(void *b, int c, size_t len)
 
 	dst = b;
 	c = (unsigned char)c;
-	if (len >= sizeof(long))
-		dst = ft_longmemset(dst, c, nbytes);
+	if (len >= OPT_SIZE)
+		dst = ft_optmemset(dst, c, nbytes);
 	if (len != 0)
 		dst = ft_bytememset(dst, c, len);
 	return (b);

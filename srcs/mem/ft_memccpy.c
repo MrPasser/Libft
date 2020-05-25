@@ -6,15 +6,14 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/18 10:45:03 by skrasin           #+#    #+#             */
-/*   Updated: 2020/05/05 14:56:36 by svet             ###   ########.fr       */
+/*   Updated: 2020/05/07 14:08:20 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_memory.h"
 #include <sys/_types/_null.h>
 
-void	*ft_memccpy(void *restrict dst, const void *restrict src, int c,
-					size_t n)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
 	void	*p;
 

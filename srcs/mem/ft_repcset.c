@@ -6,13 +6,15 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/18 13:43:37 by svet              #+#    #+#             */
-/*   Updated: 2020/05/05 14:57:07 by svet             ###   ########.fr       */
+/*   Updated: 2020/05/14 14:19:32 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned long	ft_repcset(int c)
+#include "ft_memory.h"
+
+unsigned OP_T	ft_repcset(int c)
 {
-	unsigned long cc;
+	register unsigned OP_T cc;
 
 	if ((cc = (unsigned char)c) != 0)
 	{

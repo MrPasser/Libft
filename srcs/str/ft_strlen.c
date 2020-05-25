@@ -6,17 +6,17 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 13:21:05 by skrasin           #+#    #+#             */
-/*   Updated: 2020/05/05 14:58:52 by svet             ###   ########.fr       */
+/*   Updated: 2020/05/15 18:02:18 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_memory.h"
 
-static int	ft_testlongstrlen(const unsigned long *uls)
+static inline  int	ft_testoptstrlen(const unsigned OP_T *uls)
 {
-	const char			*c;
-	size_t				i;
-	const unsigned long	size = sizeof(long);
+	register const char				*c;
+	register	size_t				i;
+	register const unsigned OP_T	size = OPT_SIZE;
 
 	c = (const char *)uls;
 	i = 0;
@@ -29,23 +29,21 @@ static int	ft_testlongstrlen(const unsigned long *uls)
 	return (-1);
 }
 
-size_t		ft_strlen(const char *str)
+size_t				ft_strlen(const char *str)
 {
-	const char			*s = str;
-	const unsigned long *uls;
-	unsigned long		x;
-	const unsigned long	rep_01 = ft_repcset(0x01);
-	const unsigned long	rep_80 = ft_repcset(0x80);
+	const char						*s = str;
+	register	const unsigned OP_T	*uls;
+	register unsigned OP_T			x;
 
-	x = sizeof(size_t) - ((uintptr_t)s & (sizeof(size_t) - 1));
+	x = ft_optmemalign(s);
 	while (x-- != 0)
 		if (*s++ == '\0')
 			return (s - str - 1);
-	uls = (unsigned long *)s;
+	uls = (unsigned OP_T *)s;
 	while (1)
 	{
-		if (((*uls - rep_01) & ((~*uls) & rep_80)) != 0)
-			if ((x = ft_testlongstrlen(uls)) != -1)
+		if (((*uls - REP_01L) & ((~*uls) & REP_08L)) != 0)
+			if ((x = ft_testoptstrlen(uls)) != -1)
 				return ((const char *)uls - str + x);
 		++uls;
 	}
