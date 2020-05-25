@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_math.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/16 11:33:08 by skrasin           #+#    #+#             */
-/*   Updated: 2020/05/19 10:59:11 by svet             ###   ########.fr       */
+/*   Created: 2020/05/18 15:47:15 by svet              #+#    #+#             */
+/*   Updated: 2020/05/19 10:58:39 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef FT_MATH_H
+# define FT_MATH_H
+# include <sys/_types/_size_t.h>
 
-# include "ft_char.h"
-# include "ft_memory.h"
-# include "ft_string.h"
-# include "ft_io.h"
-# include "ft_math.h"
+size_t	ft_num_of_digs(long n, int base);
 
 #endif

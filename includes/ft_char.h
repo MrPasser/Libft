@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 13:57:45 by svet              #+#    #+#             */
-/*   Updated: 2020/05/06 11:47:30 by svet             ###   ########.fr       */
+/*   Updated: 2020/05/15 15:46:46 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int	ft_tolower(int c);
 
 int	ft_isupper(int c);
 int	ft_islower(int c);
+int	ft_isspace(int c);
+
 int	ft_isnegative(int c);
 int	ft_ispositive(int c);
 int ft_isbetween(int x, int m, int n);
