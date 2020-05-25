@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/20 10:44:50 by svet              #+#    #+#             */
-/*   Updated: 2020/05/20 11:26:42 by svet             ###   ########.fr       */
+/*   Updated: 2020/05/25 13:31:45 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 #include <stdlib.h>
 #include <sys/_types/_null.h>
 
-void ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list *tmp;
-	
+
 	if (lst != NULL)
 		while (*lst != NULL)
 		{

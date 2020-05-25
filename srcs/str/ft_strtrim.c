@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/23 13:34:27 by skrasin           #+#    #+#             */
-/*   Updated: 2020/05/18 11:36:04 by svet             ###   ########.fr       */
+/*   Updated: 2020/05/25 13:37:59 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,5 @@ char					*ft_strtrim(char const *str, char const *set)
 	end = ft_trim_end(str, set, ft_strlen(str));
 	if (start > end)
 		return ((char *)ft_memalloc(sizeof(char)));
-	return (ft_substr(str, start, end - start + 1));
+	return (ft_strsub(str, start, end - start + 1));
 }

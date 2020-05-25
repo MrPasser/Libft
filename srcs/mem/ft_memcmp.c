@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 16:21:01 by skrasin           #+#    #+#             */
-/*   Updated: 2020/05/15 16:55:51 by svet             ###   ########.fr       */
+/*   Updated: 2020/05/25 14:17:02 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static inline int	ft_optmemcmp(const void **const str1,
 	}
 	*str1 = s1;
 	*str2 = s2;
-	*nbytes &= OPT_MASK;
+	*nbytes = OPT_SIZE - *nbytes & OPT_MASK;
 	return (0);
 }
 

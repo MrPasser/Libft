@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 15:20:10 by skrasin           #+#    #+#             */
-/*   Updated: 2020/05/25 12:25:26 by svet             ###   ########.fr       */
+/*   Updated: 2020/05/25 13:50:12 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 
 char	*ft_strstr(const char *haystack, const char *needle)
 {
-	if (!*needle)
+	if (*needle == '\0')
 		return ((char *)haystack);
-	while (*haystack)
+	while (*haystack != '\0')
 	{
-		if (!ft_memcmp(haystack, needle, ft_strlen(needle)))
+		if (ft_memcmp(haystack, needle, ft_strlen(needle)) == 0)
 			return ((char*)haystack);
 		haystack++;
 	}
