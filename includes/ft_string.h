@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 14:29:21 by svet              #+#    #+#             */
-/*   Updated: 2020/05/25 13:10:43 by svet             ###   ########.fr       */
+/*   Updated: 2020/05/26 13:11:11 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
+char	*ft_strext(char **dst, char const *src);
 char	*ft_ltoa_base(long n, int base, int isupper);
 int		ft_strequ(char const *s1, char const *s2);
 int		ft_strnequ(char const *s1, char const *s2, size_t n);

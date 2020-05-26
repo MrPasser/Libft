@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/03 15:00:39 by skrasin           #+#    #+#             */
-/*   Updated: 2020/05/19 11:04:05 by svet             ###   ########.fr       */
+/*   Updated: 2020/05/26 13:06:31 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,25 +39,6 @@ static inline t_list	*ft_lstsearch(size_t content_size)
 	return (store);
 }
 
-static inline char		*ft_strextend(char **dst, char const *src)
-{
-	char	*tmp;
-	size_t	n1;
-	size_t	n2;
-
-	if (dst == NULL || *dst == NULL || src == NULL)
-		return (NULL);
-	tmp = *dst;
-	n1 = ft_strlen(*dst);
-	n2 = ft_strlen(src);
-	if ((*dst = ft_memalloc(n1 + n2 + 1)) == NULL)
-		return (NULL);
-	*dst = ft_memcpy(*dst, tmp, n1);
-	*dst = ft_memcpy(*dst + n1, src, n2);
-	free(tmp);
-	return (*dst);
-}
-
 int						ft_get_next_line(const int fd, char **line)
 {
 	ssize_t			len;
@@ -65,7 +46,7 @@ int						ft_get_next_line(const int fd, char **line)
 	char			buf[BUFF_SIZE + 1];
 	char			*nl;
 
-	if (fd < 0 || line == NULL || read(fd, 0, 0) == 0 ||
+	if (fd < 0 || line == NULL || read(fd, 0, 0) == -1 ||
 											(node = ft_lstsearch(fd)) == NULL)
 		return (-1);
 	while ((nl = ft_strchr(node->content, '\n')) != NULL)
@@ -73,12 +54,12 @@ int						ft_get_next_line(const int fd, char **line)
 		if ((len = read(fd, buf, BUFF_SIZE)) <= 0)
 			break ;
 		buf[len] = '\0';
-		ft_strextend((char **)&node->content, buf);
+		ft_strext((char **)&node->content, buf);
 	}
 	*line = nl ? ft_strsub(node->content, 0, nl - (char *)node->content) :
 					ft_strdup(node->content);
 	*(char *)node->content = '\0';
-	nl ? ft_strextend((char **)&node->content, nl + 1) :
-		ft_strextend((char **)&node->content, node->content);
+	nl ? ft_strext((char **)&node->content, nl + 1) :
+		ft_strext((char **)&node->content, node->content);
 	return ((**line == '\0' && !len) ? 0 : 1);
 }
