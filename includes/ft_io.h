@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 15:26:49 by svet              #+#    #+#             */
-/*   Updated: 2020/05/19 10:59:58 by svet             ###   ########.fr       */
+/*   Updated: 2020/05/26 14:13:32 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ void	ft_putnbr(int n);
 void	ft_putlnbr_base_fd(long n, int base, int isupper, int fd);
 void	ft_putlnbr_base(long n, int base, int isupper);
 
-int		ft_get_next_line(const int fd, char **line);
+int		ft_getline(const int fd, char **line);
 
 #endif

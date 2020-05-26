@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_get_next_line.c                                 :+:      :+:    :+:   */
+/*   ft_getline.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/03 15:00:39 by skrasin           #+#    #+#             */
-/*   Updated: 2020/05/26 13:15:32 by svet             ###   ########.fr       */
+/*   Updated: 2020/05/26 14:14:08 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static inline t_list	*ft_lstsearch(size_t content_size)
 	return (store);
 }
 
-int						ft_get_next_line(const int fd, char **line)
+int						ft_getline(const int fd, char **line)
 {
 	ssize_t			len;
 	t_list			*node;
