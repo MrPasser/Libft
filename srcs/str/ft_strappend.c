@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strext.c                                        :+:      :+:    :+:   */
+/*   ft_strappend.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/26 13:07:19 by svet              #+#    #+#             */
-/*   Updated: 2020/05/26 13:13:09 by svet             ###   ########.fr       */
+/*   Updated: 2020/05/30 20:04:23 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "ft_string.h"
 #include <stdlib.h>
 
-char	*ft_strext(char **dst, char const *src)
+char	*ft_strappend(char **dst, char const *src)
 {
 	char			*tmp;
 	const size_t	n1 = ft_strlen(*dst);
