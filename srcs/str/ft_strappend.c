@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/26 13:07:19 by svet              #+#    #+#             */
-/*   Updated: 2020/05/30 20:04:23 by svet             ###   ########.fr       */
+/*   Updated: 2020/05/30 20:30:19 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strappend(char **dst, char const *src)
 	if ((*dst = ft_memalloc(n1 + n2 + 1)) == NULL)
 		return (NULL);
 	*dst = ft_memcpy(*dst, tmp, n1);
-	ft_memcpy(*dst + n1, src, n2 + 1);
+	ft_memcpy(*dst + n1, src, n2);
 	free(tmp);
 	return (*dst);
 }
