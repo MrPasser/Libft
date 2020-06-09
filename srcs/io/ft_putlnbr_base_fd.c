@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 15:52:33 by svet              #+#    #+#             */
-/*   Updated: 2020/05/19 11:03:03 by svet             ###   ########.fr       */
+/*   Updated: 2020/06/08 17:43:06 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,10 @@ void	ft_putlnbr_base_fd(long n, int base, int isupper, int fd)
 	const char	a = isupper == 1 ? 'A' : 'a';
 
 	if (base < 2 || base > 36)
-		return (ft_putchar_fd('\0', fd));
+	{
+		ft_putchar_fd('\0', fd);
+		return ;
+	}
 	len = ft_num_of_digs(n, base);
 	s[0] = (n < 0) ? '-' : '0';
 	s[len] = '\0';

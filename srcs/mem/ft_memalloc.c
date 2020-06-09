@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 14:58:27 by skrasin           #+#    #+#             */
-/*   Updated: 2020/05/08 13:07:18 by svet             ###   ########.fr       */
+/*   Updated: 2020/06/08 17:25:15 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	*ft_memalloc(size_t size)
 {
-	void	*const new = malloc(size * sizeof(void));
+	void	*const new = malloc(size);
 
 	if (new == NULL)
 		return (NULL);

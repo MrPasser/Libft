@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 15:41:57 by skrasin           #+#    #+#             */
-/*   Updated: 2020/05/14 14:18:11 by svet             ###   ########.fr       */
+/*   Updated: 2020/06/08 17:38:56 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,13 @@ void		*ft_memmove(void *ds, const void *sr, size_t len)
 
 	if (len == 0 || ds == sr)
 		return (ds);
-	if ((size_t)(ds - sr) >= len)
+	if ((size_t)((OP_T)ds - (OP_T)sr) >= len)
 		ft_memcpy(ds, sr, len);
 	else
 	{
-		tmp = ds + len;
+		tmp = (void *)((OP_T)ds + len);
 		dst = &tmp;
-		sr += len;
+		sr = (void *)((OP_T)sr + len);
 		src = &sr;
 		if (len >= OPT_SIZE)
 			ft_optmemmove(dst, src, nbytes);

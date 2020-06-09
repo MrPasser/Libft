@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 15:12:30 by skrasin           #+#    #+#             */
-/*   Updated: 2020/05/14 14:17:48 by svet             ###   ########.fr       */
+/*   Updated: 2020/06/08 17:36:26 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ static inline void	ft_8optmemcpy(const void **ds, const void **sr, size_t *nbyte
 		((unsigned OP_T *)dst)[5] = ((unsigned OP_T *)src)[5];
 		((unsigned OP_T*)dst)[6] = ((unsigned OP_T *)src)[6];
 		((unsigned OP_T *)dst)[7] = ((unsigned OP_T *)src)[7];
-		dst += 8 * OPT_SIZE;
-		src += 8 * OPT_SIZE;
+		dst = (void *)((OP_T)dst + 8 * OPT_SIZE);
+		src = (void *)((OP_T)src + 8 * OPT_SIZE);
 	}
 	*(void **)ds = dst;
 	*(const void **)sr = src;

@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 16:21:07 by skrasin           #+#    #+#             */
-/*   Updated: 2020/05/14 14:19:18 by svet             ###   ########.fr       */
+/*   Updated: 2020/06/08 17:41:34 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,13 @@ static inline void	*ft_optmemset(void *dst, int c, size_t *l)
 		((unsigned OP_T *)dst)[5] = rep_c;
 		((unsigned OP_T *)dst)[6] = rep_c;
 		((unsigned OP_T *)dst)[7] = rep_c;
-		dst += 8 * OPT_SIZE;
+		dst = (void *)((OP_T)dst + 8 * OPT_SIZE);
 	}
 	xl = (*l & (OPT_SIZE * 8 - 1)) / OPT_SIZE;
 	while (xl-- != 0)
 	{
 		((unsigned OP_T *)dst)[0] = rep_c;
-		dst += OPT_SIZE;
+		dst = (void *)((OP_T)dst + OPT_SIZE);
 	}
 	*l &= OPT_MASK;
 	return (dst);
