@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 11:05:57 by svet              #+#    #+#             */
-/*   Updated: 2020/06/08 21:39:18 by svet             ###   ########.fr       */
+/*   Updated: 2020/06/09 05:44:31 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ char	*ft_ltoa_base(long n, int base, int isupper)
 	len += base == 16 ? 2 : 0;
 	if (base == 1 || base > 36 || ((s = (char *)ft_memalloc(len + 1)) == NULL))
 		return (NULL);
+	if (base == 16 && n == 0)
+		return (ft_memcpy(s, "0x0", 4));
 	s[0] = (n < 0) ? '-' : '0';
 	while (n != 0)
 	{
@@ -35,8 +37,8 @@ char	*ft_ltoa_base(long n, int base, int isupper)
 		n /= base;
 	}
 	if (base == 16)
-		s[n == 0 ? len - 2 : --len] = 'x';
+		s[--len] = 'x';
 	if (base == 16 || base == 8)
-		s[len] = '0';
+		s[len - 1] = '0';
 	return (s);
 }
