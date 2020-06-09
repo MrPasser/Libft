@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 15:52:33 by svet              #+#    #+#             */
-/*   Updated: 2020/06/08 21:40:20 by svet             ###   ########.fr       */
+/*   Updated: 2020/06/09 06:48:55 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ void	ft_putlnbr_base_fd(long n, int base, int isupper, int fd)
 	const long	sign = n < 0 ? -1L : 1L;
 	const char	a = isupper == 1 ? 'A' : 'a';
 
+	if (base == 0)
+		base = 10;
 	if (base < 2 || base > 36)
 	{
 		ft_putchar_fd('\0', fd);
