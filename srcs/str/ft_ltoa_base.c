@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 11:05:57 by svet              #+#    #+#             */
-/*   Updated: 2020/06/09 05:44:31 by svet             ###   ########.fr       */
+/*   Updated: 2020/06/09 06:01:01 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_ltoa_base(long n, int base, int isupper)
 	len = ft_num_of_digs(n, base) + (n < 0 ? 1 : 0);
 	len += base == 8 ? 1 : 0;
 	len += base == 16 ? 2 : 0;
-	if (base == 1 || base > 36 || ((s = (char *)ft_memalloc(len + 1)) == NULL))
+	if (base < 2 || base > 36 || ((s = (char *)ft_memalloc(len + 1)) == NULL))
 		return (NULL);
 	if (base == 16 && n == 0)
 		return (ft_memcpy(s, "0x0", 4));
