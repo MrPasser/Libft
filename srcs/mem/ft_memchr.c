@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/18 11:08:12 by skrasin           #+#    #+#             */
-/*   Updated: 2020/06/08 17:33:33 by svet             ###   ########.fr       */
+/*   Updated: 2020/06/08 17:57:51 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static inline void	*ft_optmemchr(const void *str, int c, size_t *l)
 	xl = ft_optmemalign(str);
 	if (xl != 0 && (s = ft_bytememchr(str, c, xl)) != NULL)
 		return ((void *)s);
-	s = (const unsigned OP_T *)((unsigned char *)str + xl);
+	s = (const unsigned OP_T *)((const unsigned char *)str + xl);
 	*l -= xl;
 	xl = *l / OPT_SIZE;
 	while (xl != 0)
