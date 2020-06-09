@@ -6,7 +6,7 @@
 #    By: svet <svet@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/04 15:46:13 by skrasin           #+#    #+#              #
-#    Updated: 2020/06/08 17:46:04 by svet             ###   ########.fr        #
+#    Updated: 2020/06/08 19:28:21 by svet             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ LIB			=
 NAME := libft.a
 
 #	Compiler
-CFLAGS := -O3 -Wall -Wextra -Werror -Weverything -pedantic
+CFLAGS := -O3 -Wall -Wextra -Werror -pedantic# -Weverything
 CPPFLAGS := -I$(incdir)
 
 #	Archive

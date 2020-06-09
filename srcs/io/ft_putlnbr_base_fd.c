@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 15:52:33 by svet              #+#    #+#             */
-/*   Updated: 2020/06/08 17:43:06 by svet             ###   ########.fr       */
+/*   Updated: 2020/06/08 21:40:20 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_putlnbr_base_fd(long n, int base, int isupper, int fd)
 		ft_putchar_fd('\0', fd);
 		return ;
 	}
-	len = ft_num_of_digs(n, base);
+	len = ft_num_of_digs(n, base) + (n < 0 ? 1 : 0);
 	s[0] = (n < 0) ? '-' : '0';
 	s[len] = '\0';
 	while (n != 0)
