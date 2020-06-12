@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 14:29:21 by svet              #+#    #+#             */
-/*   Updated: 2020/05/30 20:04:42 by svet             ###   ########.fr       */
+/*   Updated: 2020/06/11 20:51:41 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ char	*ft_strncpy(char *dst, const char *src, size_t len);
 char	*ft_strncat(char *s1, char *s2, size_t n);
 size_t	ft_strnlen(const char *str, size_t n);
 long	ft_strtol(const char *nptr, char **endptr, int base);
+char	*ft_strchrnul(const char *s, char c);
 
 char	*ft_strnew(size_t size);
 char	*ft_strjoin(char const *s1, char const *s2);
@@ -41,6 +42,7 @@ char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 char	*ft_strappend(char **dst, char const *src);
+char	*ft_strnappend(char **dst, char const *src, size_t n);
 char	*ft_ltoa_base(long n, int base, int isupper);
 int		ft_strequ(char const *s1, char const *s2);
 int		ft_strnequ(char const *s1, char const *s2, size_t n);
