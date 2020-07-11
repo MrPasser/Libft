@@ -6,11 +6,11 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/06 11:36:55 by svet              #+#    #+#             */
-/*   Updated: 2020/06/08 17:19:36 by svet             ###   ########.fr       */
+/*   Updated: 2020/07/10 21:40:09 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_char.h"
+#include "ft_ctype.h"
 
 int	ft_isnegative(int c)
 {

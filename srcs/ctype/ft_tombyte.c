@@ -6,12 +6,12 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 16:27:38 by svet              #+#    #+#             */
-/*   Updated: 2020/07/10 20:54:34 by svet             ###   ########.fr       */
+/*   Updated: 2020/07/10 21:41:25 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_ctype.h"
 #include "ft_memory.h"
-#include "ft_char.h"
 #include <stdlib.h>
 
 char	*ft_tombyte(int c)

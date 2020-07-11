@@ -6,11 +6,11 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/18 13:29:28 by skrasin           #+#    #+#             */
-/*   Updated: 2020/05/05 17:06:06 by svet             ###   ########.fr       */
+/*   Updated: 2020/07/10 21:39:33 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_char.h"
+#include "ft_ctype.h"
 
 int				ft_isalpha(int c)
 {

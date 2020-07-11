@@ -6,12 +6,12 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/21 20:09:29 by skrasin           #+#    #+#             */
-/*   Updated: 2020/07/10 20:43:49 by svet             ###   ########.fr       */
+/*   Updated: 2020/07/10 21:43:01 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_ctype.h"
 #include "ft_memory.h"
-#include "ft_char.h"
 #include <unistd.h>
 
 void	ft_putchar_fd(int c, int fd)
