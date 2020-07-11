@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/21 20:09:29 by skrasin           #+#    #+#             */
-/*   Updated: 2020/07/10 21:43:01 by svet             ###   ########.fr       */
+/*   Updated: 2020/07/10 21:49:24 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "ft_memory.h"
 #include <unistd.h>
 
-void	ft_putchar_fd(int c, int fd)
+void	ft_putchar_fd(wchar_t c, int fd)
 {
 	char	buf[6];
 	size_t	i;

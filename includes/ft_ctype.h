@@ -6,12 +6,13 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 13:57:45 by svet              #+#    #+#             */
-/*   Updated: 2020/07/10 21:41:18 by svet             ###   ########.fr       */
+/*   Updated: 2020/07/10 21:47:53 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_CHAR_H
 # define FT_CHAR_H
+# include <wchar.h>
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -28,6 +29,6 @@ int		ft_isspace(int c);
 int		ft_isnegative(int c);
 int		ft_ispositive(int c);
 int		ft_isbetween(int x, int m, int n);
-char	*ft_tombyte(int c);
+char	*ft_tombyte(wchar_t c);
 
 #endif

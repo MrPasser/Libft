@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 16:27:38 by svet              #+#    #+#             */
-/*   Updated: 2020/07/10 21:41:25 by svet             ###   ########.fr       */
+/*   Updated: 2020/07/10 21:48:52 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "ft_memory.h"
 #include <stdlib.h>
 
-char	*ft_tombyte(int c)
+char	*ft_tombyte(wchar_t c)
 {
 	char	*mbyte;
 	char	buf[6];
