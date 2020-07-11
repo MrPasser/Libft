@@ -6,12 +6,12 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 13:57:45 by svet              #+#    #+#             */
-/*   Updated: 2020/07/10 21:52:24 by svet             ###   ########.fr       */
+/*   Updated: 2020/07/10 21:57:37 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_CHAR_H
-# define FT_CHAR_H
+#ifndef FT_CTYPE_H
+# define FT_CTYPE_H
 # include <sys/_types/_wchar_t.h>
 
 int		ft_isalpha(int c);
