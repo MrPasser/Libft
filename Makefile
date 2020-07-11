@@ -6,7 +6,7 @@
 #    By: svet <svet@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/04 15:46:13 by skrasin           #+#    #+#              #
-#    Updated: 2020/07/10 16:25:04 by svet             ###   ########.fr        #
+#    Updated: 2020/07/10 22:02:56 by svet             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,4 +69,4 @@ fclean: clean
 #	All removing then compiling
 re: fclean all
 
-.PHONY: all clean fclean re bonus srcs includes char mem str io math list list_bonus
+.PHONY: all clean fclean re bonus srcs includes ctype mem str io math list list_bonus
