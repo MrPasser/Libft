@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/09 07:16:27 by svet              #+#    #+#             */
-/*   Updated: 2020/07/10 14:54:41 by svet             ###   ########.fr       */
+/*   Updated: 2020/07/18 11:49:22 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ char	*ft_strnappend(char **dst, char const *src, size_t n)
 	char *const		tmp = *dst;
 	const size_t	dlen = ft_strlen(*dst);
 	const size_t	slen = ft_strnlen(src, n);
-
 
 	if ((*dst = ft_memalloc(dlen + slen + 1)) == NULL)
 		return (NULL);

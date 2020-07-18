@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 16:27:38 by svet              #+#    #+#             */
-/*   Updated: 2020/07/17 18:37:37 by svet             ###   ########.fr       */
+/*   Updated: 2020/07/18 11:47:23 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_tombyte(wchar_t c)
 	if (ft_isascii(c) == 1)
 		return ((mbyte = ft_memalloc(2)) == NULL ? NULL :
 														ft_memset(mbyte, c, 1));
-	i = 5;
+		i = 5;
 	ft_bzero(buf, 6);
 	while (c > 0x1F && i > 0)
 	{

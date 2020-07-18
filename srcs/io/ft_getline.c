@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/03 15:00:39 by skrasin           #+#    #+#             */
-/*   Updated: 2020/07/17 19:27:36 by svet             ###   ########.fr       */
+/*   Updated: 2020/07/18 11:50:56 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #define BUFF_SIZE	4096
-#define	FD_N		content_size
+#define FD_N		content_size
 
 static inline t_list	*ft_lstsearch(size_t fd)
 {
@@ -42,10 +42,10 @@ static inline t_list	*ft_lstsearch(size_t fd)
 
 int						ft_getline(const int fd, char **line)
 {
-	ssize_t	len;
-	t_list		*node;
-	register char		buf[BUFF_SIZE + 1];
-	register char		*nl;
+	ssize_t			len;
+	t_list			*node;
+	register char	buf[BUFF_SIZE + 1];
+	register char	*nl;
 
 	if (fd < 0 || line == NULL || read(fd, 0, 0) == -1 ||
 											(node = ft_lstsearch(fd)) == NULL)
