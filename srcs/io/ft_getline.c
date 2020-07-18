@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/03 15:00:39 by skrasin           #+#    #+#             */
-/*   Updated: 2020/06/29 21:35:58 by svet             ###   ########.fr       */
+/*   Updated: 2020/07/17 18:43:24 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 static inline t_list	*ft_lstsearch(size_t fd)
 {
 	static t_list	*store = NULL;
-	t_list			*node;
-	char			*tmp;
+	register t_list	*node;
+	register char	*tmp;
 
 	node = store;
 	while (node != NULL)
@@ -42,10 +42,10 @@ static inline t_list	*ft_lstsearch(size_t fd)
 
 int						ft_getline(const int fd, char **line)
 {
-	ssize_t			len;
-	t_list			*node;
-	char			buf[BUFF_SIZE + 1];
-	char			*nl;
+	ssize_t	len;
+	t_list		*node;
+	register char		buf[BUFF_SIZE + 1];
+	register char		*nl;
 
 	if (fd < 0 || line == NULL || read(fd, 0, 0) == -1 ||
 											(node = ft_lstsearch(fd)) == NULL)
@@ -55,12 +55,14 @@ int						ft_getline(const int fd, char **line)
 		if ((len = read(fd, buf, BUFF_SIZE)) <= 0)
 			break ;
 		buf[len] = '\0';
-		ft_strappend((char **)&node->content, buf);
+		if (ft_strappend((char **)&node->content, buf) == NULL)
+			return (-1);
 	}
 	*line = nl ? ft_strsub(node->content, 0, nl - (char *)node->content) :
 					ft_strdup(node->content);
 	*(char *)node->content = '\0';
-	nl ? ft_strappend((char **)&node->content, nl + 1) :
-		ft_strappend((char **)&node->content, node->content);
+	if (nl ? ft_strappend((char **)&node->content, nl + 1) :
+		ft_strappend((char **)&node->content, node->content) == NULL)
+		return (-1);
 	return ((**line == '\0' && !len) ? 0 : 1);
 }

@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 13:31:04 by skrasin           #+#    #+#             */
-/*   Updated: 2020/05/05 15:01:19 by svet             ###   ########.fr       */
+/*   Updated: 2020/07/17 18:30:51 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <stdlib.h>
 #include <sys/_types/_null.h>
 
-char					*ft_strdup(const char *s)
+char	*ft_strdup(const char *s)
 {
 	const size_t		len = ft_strlen(s) + 1;
 	void *const			new = malloc(len);

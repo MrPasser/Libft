@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/23 12:51:23 by skrasin           #+#    #+#             */
-/*   Updated: 2020/05/18 11:34:41 by svet             ###   ########.fr       */
+/*   Updated: 2020/07/17 18:33:24 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (s1 == NULL || s2 == NULL)
 		return (NULL);
 	n1 = ft_strlen(s1) + 1;
-	if ((fstr = ft_memalloc(n1 + ft_strlen(s2) + 1)))
+	if ((fstr = ft_memalloc(n1 + ft_strlen(s2) + 1)) != NULL)
 	{
 		fstr = ft_memcpy(fstr, s1, n1);
 		return (ft_strcat(fstr, s2));

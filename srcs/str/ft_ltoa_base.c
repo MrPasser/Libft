@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 11:05:57 by svet              #+#    #+#             */
-/*   Updated: 2020/06/15 20:31:01 by svet             ###   ########.fr       */
+/*   Updated: 2020/07/17 19:16:43 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 
 char	*ft_ltoa_base(long n, int base, int isupper)
 {
-	char		*s;
-	size_t		len;
-	long		rem;
-	const long	sign = n < 0 ? 1L : 0L;
-	const char	a = isupper == 1 ? 'A' : 'a';
+	register const char	a = isupper == 1 ? 'A' : 'a';
+	register const long	sign = n < 0 ? 1L : 0L;
+	register long		rem;
+	register char		*s;
+	register size_t		len;
 
 	len = ft_num_of_digs(n, base) + sign;
 	if (base == 0)
