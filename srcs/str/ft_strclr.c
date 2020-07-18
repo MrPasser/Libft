@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/21 19:34:21 by skrasin           #+#    #+#             */
-/*   Updated: 2020/07/17 18:30:05 by svet             ###   ########.fr       */
+/*   Updated: 2020/07/17 19:26:06 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,6 @@
 
 void	ft_strclr(char *s)
 {
-	s != NULL ? ft_bzero(s, ft_strlen(s)) : 0;
+	if (s != NULL)
+		ft_bzero(s, ft_strlen(s));
 }

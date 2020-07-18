@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/03 15:00:39 by skrasin           #+#    #+#             */
-/*   Updated: 2020/07/17 18:43:24 by svet             ###   ########.fr       */
+/*   Updated: 2020/07/17 19:27:36 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,8 @@ int						ft_getline(const int fd, char **line)
 	*line = nl ? ft_strsub(node->content, 0, nl - (char *)node->content) :
 					ft_strdup(node->content);
 	*(char *)node->content = '\0';
-	if (nl ? ft_strappend((char **)&node->content, nl + 1) :
-		ft_strappend((char **)&node->content, node->content) == NULL)
+	if ((nl ? ft_strappend((char **)&node->content, nl + 1) :
+		ft_strappend((char **)&node->content, node->content)) == NULL)
 		return (-1);
 	return ((**line == '\0' && !len) ? 0 : 1);
 }
