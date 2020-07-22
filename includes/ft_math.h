@@ -6,14 +6,14 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 15:47:15 by svet              #+#    #+#             */
-/*   Updated: 2020/05/19 10:58:39 by svet             ###   ########.fr       */
+/*   Updated: 2020/07/21 21:17:21 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_MATH_H
 # define FT_MATH_H
-# include <sys/_types/_size_t.h>
+# include <_types/_intmax_t.h>
 
-size_t	ft_num_of_digs(long n, int base);
+unsigned int ft_num_of_digs(intmax_t n, int base);
 
 #endif
