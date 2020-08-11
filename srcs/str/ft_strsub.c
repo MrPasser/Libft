@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/23 12:38:37 by skrasin           #+#    #+#             */
-/*   Updated: 2020/07/21 21:26:09 by svet             ###   ########.fr       */
+/*   Updated: 2020/07/21 21:31:24 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	return (ft_memcpy(substr, s + start, len));
 }
-
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

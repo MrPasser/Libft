@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_num_of_digs.c                                   :+:      :+:    :+:   */
+/*   ft_isinf.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/18 15:48:53 by svet              #+#    #+#             */
-/*   Updated: 2020/07/21 21:29:51 by svet             ###   ########.fr       */
+/*   Created: 2020/08/10 16:27:35 by svet              #+#    #+#             */
+/*   Updated: 2020/08/10 17:10:18 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <_types/_intmax_t.h>
-
-unsigned int	ft_num_of_digs(intmax_t n, int base)
+int	ft_isinf(double d)
 {
-	unsigned int l;
+	int i;
 
-	l = n == 0 ? 1 : 0;
-	while (n != 0)
-	{
-		n /= base;
-		++l;
-	}
-	return (l);
+	i = *((int *)&d + 1);
+	if (i == 0x7ff00000)
+		return (1);
+	if ((unsigned int)i == 0xfff00000)
+		return (-1);
+	return (0);
 }

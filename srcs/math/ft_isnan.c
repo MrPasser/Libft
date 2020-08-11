@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_num_of_digs.c                                   :+:      :+:    :+:   */
+/*   ft_isnan.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/18 15:48:53 by svet              #+#    #+#             */
-/*   Updated: 2020/07/21 21:29:51 by svet             ###   ########.fr       */
+/*   Created: 2020/08/10 16:29:22 by svet              #+#    #+#             */
+/*   Updated: 2020/08/10 17:05:23 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <_types/_intmax_t.h>
+#include "ft_math.h"
 
-unsigned int	ft_num_of_digs(intmax_t n, int base)
+int	isnan(double x)
 {
-	unsigned int l;
+	int32_t						hx;
+	int32_t						lx;
+	t_ieee_double_shape_type	ew_u;
 
-	l = n == 0 ? 1 : 0;
-	while (n != 0)
-	{
-		n /= base;
-		++l;
-	}
-	return (l);
+	ew_u.value = x;
+	hx = ew_u.parts.msw;
+	lx = ew_u.parts.lsw;
+	hx &= 0x7fffffff;
+	hx |= (u_int32_t)(lx | (-lx)) >> 31;
+	hx = 0x7ff00000 - hx;
+	return (int)((u_int32_t)(hx)) >> 31;
 }

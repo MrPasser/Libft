@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 22:06:48 by svet              #+#    #+#             */
-/*   Updated: 2020/07/21 18:59:10 by svet             ###   ########.fr       */
+/*   Updated: 2020/07/24 13:17:53 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,13 +49,13 @@ static inline size_t		ft_all_words(char const *s, char c)
 	return (i);
 }
 
-static inline void			ft_del(char ***arrstr,size_t n)
+static inline void			ft_del(char ***arrstr, size_t n)
 {
 	size_t i;
 
 	i = 0;
 	while (i < n)
-		ft_strdel(&(*arrstr[i++]));
+		ft_strdel(*arrstr + i++);
 	ft_memdel((void **)arrstr);
 }
 
