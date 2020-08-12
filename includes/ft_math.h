@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 15:47:15 by svet              #+#    #+#             */
-/*   Updated: 2020/08/10 17:03:09 by svet             ###   ########.fr       */
+/*   Updated: 2020/08/10 17:40:08 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define FT_MATH_H
 # include <_types/_intmax_t.h>
 # include <sys/types.h>
+
+unsigned int	ft_num_of_digs(intmax_t n, int base);
 
 typedef struct	s_parts
 {
@@ -31,12 +33,11 @@ typedef struct	s_parts
 
 typedef union	u_ieee_double_shape_type
 {
-	double	value;
-	t_parts	parts;
+	long double	value;
+	t_parts		parts;
 }				t_ieee_double_shape_type;
 
-unsigned int	ft_num_of_digs(intmax_t n, int base);
-
-int				ft_isinf(double d);
+int				ft_isinf(long double d);
+int				isnan(long double x);
 
 #endif

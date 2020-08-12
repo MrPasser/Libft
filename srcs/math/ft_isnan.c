@@ -6,13 +6,13 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/10 16:29:22 by svet              #+#    #+#             */
-/*   Updated: 2020/08/10 17:05:23 by svet             ###   ########.fr       */
+/*   Updated: 2020/08/10 17:40:17 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_math.h"
 
-int	isnan(double x)
+int	isnan(long double x)
 {
 	int32_t						hx;
 	int32_t						lx;
