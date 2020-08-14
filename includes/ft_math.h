@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 15:47:15 by svet              #+#    #+#             */
-/*   Updated: 2020/08/10 17:40:08 by svet             ###   ########.fr       */
+/*   Updated: 2020/08/11 19:32:52 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,6 @@ typedef union	u_ieee_double_shape_type
 }				t_ieee_double_shape_type;
 
 int				ft_isinf(long double d);
-int				isnan(long double x);
+int				ft_isnan(long double x);
 
 #endif

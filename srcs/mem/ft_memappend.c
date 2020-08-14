@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isnan.c                                         :+:      :+:    :+:   */
+/*   ft_memappend.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/10 16:29:22 by svet              #+#    #+#             */
-/*   Updated: 2020/08/11 19:34:16 by svet             ###   ########.fr       */
+/*   Created: 2020/08/14 16:36:04 by svet              #+#    #+#             */
+/*   Updated: 2020/08/14 16:44:45 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_math.h"
+#include "ft_memory.h"
+#include <sys/_types/_null.h>
 
-int	ft_isnan(long double x)
+char	*ft_memappend(void **dst, char const *src, size_t dlen, size_t slen)
 {
-	int32_t						hx;
-	int32_t						lx;
-	t_ieee_double_shape_type	ew_u;
+	char	*prev_str;
+	char	*new_str;
 
-	ew_u.value = x;
-	hx = ew_u.parts.msw;
-	lx = ew_u.parts.lsw;
-	hx &= 0x7fffffff;
-	hx |= (u_int32_t)(lx | (-lx)) >> 31;
-	hx = 0x7ff00000 - hx;
-	return (int)((u_int32_t)(hx)) >> 31;
+	if (dst == NULL)
+		return (NULL);
+	prev_str = *dst;
+	if ((new_str = ft_memalloc(dlen + slen)) == NULL)
+		return (NULL);
+	ft_memcpy(new_str, prev_str, dlen);
+	ft_memcpy(new_str + dlen, src, slen);
+	ft_memdel(dst);
+	return ((*dst = new_str));
 }

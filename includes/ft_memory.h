@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 14:05:49 by svet              #+#    #+#             */
-/*   Updated: 2020/08/10 16:49:22 by svet             ###   ########.fr       */
+/*   Updated: 2020/08/14 16:44:11 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,8 @@ size_t			ft_memaligncmp(const void *const*const ds,
 				const void *const*const sr, size_t nbytes, unsigned OP_T align);
 size_t			ft_memaligncmp_bwd(const void *const*const ds,
 				const void *const*const sr, size_t nbytes, unsigned OP_T align);
+
+char			*ft_memappend(void **dst, char const *src, size_t dlen,
+																size_t slen);
 
 #endif
