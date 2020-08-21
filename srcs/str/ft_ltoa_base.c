@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 11:05:57 by svet              #+#    #+#             */
-/*   Updated: 2020/07/20 14:54:01 by svet             ###   ########.fr       */
+/*   Updated: 2020/08/21 09:29:15 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 char	*ft_ltoa_base(long n, int base, int isupper)
 {
-	register const char	a = isupper == 1 ? 'A' : 'a';
+	register const char	a = isupper ? 'A' : 'a';
 	register const long	sign = n < 0 ? 1L : 0L;
 	register long		rem;
 	register char		*s;
