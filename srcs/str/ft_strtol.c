@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtol.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: skrasin <skrasin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/14 13:54:32 by svet              #+#    #+#             */
-/*   Updated: 2020/08/18 17:10:12 by svet             ###   ########.fr       */
+/*   Updated: 2020/08/31 15:02:16 by skrasin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include <limits.h>
 #include <sys/_types/_size_t.h>
 #include <sys/_types/_null.h>
-#define FT_LIM (sign == -1L ? 1UL - (LONG_MIN + LONG_MAX) + LONG_MAX : LONG_MAX)
 
 static inline int			ft_ishex(const char *s, int base)
 {
@@ -52,24 +51,24 @@ static inline int			ft_countdigs(const char *str, int base)
 static inline int			ft_parsestr(const char *s,
 							const long sign, const int base, int *const pany)
 {
-	register const unsigned long	cutoff = FT_LIM / base;
-	register const int				cutlim = FT_LIM  % base;
-	register char					c;
-	register int					any;
-	register unsigned long			acc;
+	register unsigned long	cutoff;
+	register int			cutlim;
+	register char			c;
+	register int			any;
+	register unsigned long	acc;
 
 	any = 0;
+	acc = sign == -1L ? 1UL - (LONG_MIN + LONG_MAX) + LONG_MAX : LONG_MAX;
+	cutoff = acc / base;
+	cutlim = acc % base;
 	acc = 0;
 	while (ft_isalnum((c = *s++)) != 0)
 		if ((c = ft_parsechr(c)) >= base)
 			break ;
 		else if (any < 0 || acc > cutoff || (acc == cutoff && c > cutlim))
 			any = -1;
-		else
-		{
-			any = 1;
+		else if ((any = 1))
 			acc = acc * base + c;
-		}
 	if (any < 0)
 		acc = sign == -1L ? LONG_MIN : LONG_MAX;
 	else
