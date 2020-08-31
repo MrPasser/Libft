@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_math.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: skrasin <skrasin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 15:47:15 by svet              #+#    #+#             */
-/*   Updated: 2020/08/21 09:29:56 by svet             ###   ########.fr       */
+/*   Updated: 2020/08/31 13:17:29 by skrasin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ typedef union	u_ieee_double_shape_type
 	t_parts		parts;
 }				t_ieee_double_shape_type;
 
-int				max(int a, int b);
-int				min(int a, int b);
+int				ft_max(int a, int b);
+int				ft_min(int a, int b);
 int				ft_isinf(long double d);
 int				ft_isnan(long double x);
 
