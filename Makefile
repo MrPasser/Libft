@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: svet <svet@student.42.fr>                  +#+  +:+       +#+         #
+#    By: skrasin <skrasin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/04 15:46:13 by skrasin           #+#    #+#              #
-#    Updated: 2020/07/10 22:02:56 by svet             ###   ########.fr        #
+#    Updated: 2020/08/31 14:26:16 by skrasin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,7 +56,7 @@ all: $(NAME)
 $(NAME) : $(NAME)($(objects))
 
 #	Bonus
-bonus : $(NAME)($(objects_bonus))
+bonus : $(NAME) $(NAME)($(objects_bonus))
 
 #	Removing objects
 clean:
