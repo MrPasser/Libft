@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: skrasin <skrasin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/23 12:38:37 by skrasin           #+#    #+#             */
-/*   Updated: 2020/07/21 21:31:24 by svet             ###   ########.fr       */
+/*   Updated: 2020/08/31 14:16:15 by skrasin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 
 	if (s == NULL || substr == NULL)
 		return (NULL);
+	if (start >= len)
+		return (substr);
 	return (ft_memcpy(substr, s + start, len));
 }
 
