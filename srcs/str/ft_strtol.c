@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtol.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skrasin <skrasin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/14 13:54:32 by svet              #+#    #+#             */
-/*   Updated: 2020/08/31 15:02:16 by skrasin          ###   ########.fr       */
+/*   Updated: 2020/09/01 20:20:48 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ctype.h"
+#include "ft_string.h"
 #include <limits.h>
-#include <sys/_types/_size_t.h>
 #include <sys/_types/_null.h>
 
 static inline int			ft_ishex(const char *s, int base)
@@ -24,7 +24,7 @@ static inline int			ft_ishex(const char *s, int base)
 			(s[2] >= 'a' && s[2] <= 'f')));
 }
 
-static inline int			ft_parsechr(char c)
+static inline char			ft_parsechr(char c)
 {
 	if (c >= '0' && c <= '9')
 		c -= '0';
@@ -35,7 +35,7 @@ static inline int			ft_parsechr(char c)
 	return (c);
 }
 
-static inline int			ft_countdigs(const char *str, int base)
+static inline size_t		ft_countdigs(const char *str, int base)
 {
 	size_t n;
 
@@ -48,19 +48,24 @@ static inline int			ft_countdigs(const char *str, int base)
 	return (n);
 }
 
-static inline int			ft_parsestr(const char *s,
-							const long sign, const int base, int *const pany)
+static inline unsigned long	ft_parsestr(
+	const char *s,
+	const long sign,
+	const int base,
+	int *const pany
+)
 {
+	register unsigned long	acc;
 	register unsigned long	cutoff;
 	register int			cutlim;
-	register char			c;
 	register int			any;
-	register unsigned long	acc;
+	register char			c;
 
 	any = 0;
-	acc = sign == -1L ? 1UL - (LONG_MIN + LONG_MAX) + LONG_MAX : LONG_MAX;
-	cutoff = acc / base;
-	cutlim = acc % base;
+	acc = sign == -1L ? 1UL - ((unsigned long)LONG_MIN +
+								(unsigned long)LONG_MAX) + LONG_MAX : LONG_MAX;
+	cutoff = acc / (const unsigned long)base;
+	cutlim = (int)(acc % (const unsigned long)base);
 	acc = 0;
 	while (ft_isalnum((c = *s++)) != 0)
 		if ((c = ft_parsechr(c)) >= base)
@@ -68,11 +73,11 @@ static inline int			ft_parsestr(const char *s,
 		else if (any < 0 || acc > cutoff || (acc == cutoff && c > cutlim))
 			any = -1;
 		else if ((any = 1))
-			acc = acc * base + c;
+			acc = acc * (const unsigned long)base + (unsigned long)c;
 	if (any < 0)
-		acc = sign == -1L ? LONG_MIN : LONG_MAX;
+		acc = (unsigned long)(sign == -1L ? LONG_MIN : LONG_MAX);
 	else
-		acc *= sign;
+		acc *= (const unsigned long)sign;
 	*pany = any;
 	return (acc);
 }
@@ -100,5 +105,5 @@ long						ft_strtol(const char *nptr, char **endptr, int base)
 	acc = ft_parsestr(s, sign, base, &any);
 	if (endptr != NULL)
 		*endptr = (char *)(any ? s + ft_countdigs(s, base) : nptr);
-	return (acc);
+	return ((long)acc);
 }
