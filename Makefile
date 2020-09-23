@@ -6,7 +6,7 @@
 #    By: svet <svet@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/04 15:46:13 by skrasin           #+#    #+#              #
-#    Updated: 2020/09/14 18:54:11 by svet             ###   ########.fr        #
+#    Updated: 2020/09/22 20:37:10 by svet             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@
 
 #	Sources
 srcdir := ./srcs/
-srcdirs := ctype mem str io math list
+srcdirs := ctype mem str io math list dlist
 srcdirs_bonus := list_bonus
 
 #	Includes
