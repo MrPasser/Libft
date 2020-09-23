@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/20 11:36:51 by skrasin           #+#    #+#             */
-/*   Updated: 2020/09/22 21:10:28 by svet             ###   ########.fr       */
+/*   Updated: 2020/09/22 21:23:04 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 
 	if ((list = (t_list *)ft_memalloc(sizeof(t_list))) == NULL)
 		return (NULL);
-	if (content == NULL && ((*list).content = ft_memalloc(content_size)) == NULL)
+	if (content == NULL || ((*list).content = ft_memalloc(content_size)) == NULL)
 		return (list);
 	list->content_size = content_size;
 	list->content = ft_memcpy(list->content, content, content_size);
