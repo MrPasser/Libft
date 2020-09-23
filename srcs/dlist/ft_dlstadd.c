@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/20 17:26:31 by skrasin           #+#    #+#             */
-/*   Updated: 2020/09/22 15:32:41 by svet             ###   ########.fr       */
+/*   Updated: 2020/09/22 22:47:44 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ void	ft_dlstadd(t_dlist **alst, t_dlist *new)
 	else if (new != NULL)
 	{
 		new->prev = *alst;
-		(*alst)->next = new;
+		if (*alst != NULL)
+			(*alst)->next = new;
 		*alst = new;
 	}
 }
