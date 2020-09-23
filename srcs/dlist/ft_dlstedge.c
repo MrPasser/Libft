@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/22 16:56:44 by svet              #+#    #+#             */
-/*   Updated: 2020/09/22 17:03:42 by svet             ###   ########.fr       */
+/*   Updated: 2020/09/22 20:45:13 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 t_dlist	*ft_dlstedge(t_dlist *alst, int isforward)
 {
-	const t_dlist	*const ref = alst;
-	t_dlist			*node;
+	const t_dlist *const	ref = alst;
+	t_dlist					*node;
 
 	if (alst == NULL)
 		return (NULL);
