@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ctype.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skrasin <skrasin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 13:57:45 by svet              #+#    #+#             */
-/*   Updated: 2020/09/09 18:18:37 by skrasin          ###   ########.fr       */
+/*   Updated: 2020/09/30 19:07:30 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int		ft_isspace(int c);
 int		ft_isnegative(int c);
 int		ft_ispositive(int c);
 int		ft_isbetween(int x, int m, int n);
+
 char	*ft_wctomb(wchar_t c);
 
 #endif
