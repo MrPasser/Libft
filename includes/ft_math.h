@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_math.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skrasin <skrasin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 15:47:15 by svet              #+#    #+#             */
-/*   Updated: 2020/08/31 13:17:29 by skrasin          ###   ########.fr       */
+/*   Updated: 2020/10/15 12:35:59 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,9 @@ int				ft_max(int a, int b);
 int				ft_min(int a, int b);
 int				ft_isinf(long double d);
 int				ft_isnan(long double x);
+long long int	ft_llabs(long long int val);
+long double		ft_lpow(long double base, long int exp);
+long double		ft_ldabs(long double val);
+long double		ft_ldround(long double base, int prec);
 
 #endif

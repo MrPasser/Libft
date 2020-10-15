@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 14:29:21 by svet              #+#    #+#             */
-/*   Updated: 2020/09/30 19:31:43 by svet             ###   ########.fr       */
+/*   Updated: 2020/10/15 10:34:20 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,9 @@ char			*ft_ultoa_base(unsigned long n, int base, int isupper);
 char			*ft_strappend(char **dst, char const *src);
 char			*ft_strnappend(char **dst, char const *src, size_t n);
 char			*ft_ltoa_base(long n, int base, int isupper);
+char			*ft_ldtoa_base(long double val, int prec, int base,
+																int isupper);
+char			*ft_exptoa(long double val, int prec, int base, int isupper);
 
 char			*ft_substr(char const *s, size_t start, size_t len);
 

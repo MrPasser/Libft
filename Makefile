@@ -6,7 +6,7 @@
 #    By: svet <svet@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/04 15:46:13 by skrasin           #+#    #+#              #
-#    Updated: 2020/10/14 14:29:50 by svet             ###   ########.fr        #
+#    Updated: 2020/10/15 12:49:06 by svet             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,18 +16,19 @@
 
 #	Sources
 srcdir := ./srcs/
-srcdirs := ctype mem str io math list dlist ft_printf/builder ft_printf/getter
-srcdirs += ft_printf/parser ft_printf/printf ft_printf/processor
+srcdirs := ctype mem str io math list dlist
 srcdirs_bonus := list_bonus
 
 #	Includes
-incdir := ./includes/ ./includes/ft_printf
+incdir := ./includes/
 
 #	Output
 NAME := libft.a
 
 #	Compiler
-CFLAGS := -Ofast -Wall -Wextra -Werror -pedantic# -Weverything
+CFLAGS := -Ofast -Wall -Wextra -Werror -pedantic
+# -Weverything -Wno-poison-system-directories -Wno-cast-align -Wno-cast-qual
+# -Wno-float-equal
 CPPFLAGS := $(addprefix -I,$(incdir))
 
 #	Archive

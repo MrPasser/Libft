@@ -6,13 +6,13 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 15:43:40 by svet              #+#    #+#             */
-/*   Updated: 2020/10/14 15:49:30 by svet             ###   ########.fr       */
+/*   Updated: 2020/10/15 12:35:47 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "ft_math.h"
+#include "ft_math.h"
 
-long double	ft_lpow(long double base, int exp)
+long double	ft_lpow(long double base, long int exp)
 {
 	long double tmp;
 

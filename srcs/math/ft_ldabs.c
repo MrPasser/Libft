@@ -1,33 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_ldabs.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/17 15:00:07 by svet              #+#    #+#             */
-/*   Updated: 2020/09/07 20:37:18 by svet             ###   ########.fr       */
+/*   Created: 2020/10/15 12:24:51 by svet              #+#    #+#             */
+/*   Updated: 2020/10/15 12:27:33 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include <stdlib.h>
-#include "unistd.h"
+#include "ft_math.h"
 
-int	ft_printf(const char *restrict format, ...)
+long double	ft_ldabs(long double val)
 {
-	va_list arg;
-	int		done;
-	char	*fstr;
-
-	va_start(arg, format);
-	done = ft_vasprintf(&fstr, format, arg);
-	va_end(arg);
-	if (done > -1)
-	{
-		write(STDOUT_FILENO, fstr, done);
-		free(fstr);
-		return (done);
-	}
-	return (-1);
+	return (val < 0 ? -val : val);
 }
