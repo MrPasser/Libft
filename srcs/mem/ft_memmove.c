@@ -6,14 +6,18 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 15:41:57 by skrasin           #+#    #+#             */
-/*   Updated: 2020/09/01 20:26:38 by svet             ###   ########.fr       */
+/*   Updated: 2020/10/14 19:56:21 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_memory.h"
 
-static inline void	ft_bytememmove(void **ds, const void **sr, size_t *len,
-																	size_t n)
+static inline void	ft_bytememmove(
+	void **ds,
+	const void **sr,
+	size_t *len,
+	size_t n
+)
 {
 	register unsigned char			*dst;
 	register const unsigned char	*src;
