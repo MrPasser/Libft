@@ -6,7 +6,7 @@
 #    By: svet <svet@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/04 15:46:13 by skrasin           #+#    #+#              #
-#    Updated: 2020/10/15 12:49:06 by svet             ###   ########.fr        #
+#    Updated: 2020/10/16 15:35:38 by svet             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,10 +17,13 @@
 #	Sources
 srcdir := ./srcs/
 srcdirs := ctype mem str io math list dlist
+srcdirs += Ft_printf/builder Ft_printf/getter Ft_printf/parser Ft_printf/printf 
+srcdirs += Ft_printf/processor
 srcdirs_bonus := list_bonus
 
 #	Includes
 incdir := ./includes/
+incdir += $(addprefix $(incdir), Ft_printf/)
 
 #	Output
 NAME := libft.a
@@ -29,7 +32,7 @@ NAME := libft.a
 CFLAGS := -Ofast -Wall -Wextra -Werror -pedantic
 # -Weverything -Wno-poison-system-directories -Wno-cast-align -Wno-cast-qual
 # -Wno-float-equal
-CPPFLAGS := $(addprefix -I,$(incdir))
+CPPFLAGS := $(addprefix -I ,$(incdir))
 
 #	Archive
 ARFLAGS := $(ARFLAGS)s

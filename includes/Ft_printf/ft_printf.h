@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/16 11:33:08 by skrasin           #+#    #+#             */
-/*   Updated: 2020/10/16 15:53:05 by svet             ###   ########.fr       */
+/*   Created: 2020/06/30 15:07:45 by svet              #+#    #+#             */
+/*   Updated: 2020/10/16 15:27:46 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
+# include <stdarg.h>
 
-# include "ft_memory.h"
-# include "ft_string.h"
-# include "ft_ctype.h"
-# include "ft_io.h"
-# include "ft_math.h"
-# include "ft_list.h"
-# include "ft_list_bonus.h"
-# include "ft_dlist.h"
-# include "ft_printf.h"
+int	ft_printf(const char *restrict format, ...);
+int	ft_vasprintf(char **result_ptr, const char *format, va_list args);
 
 #endif
