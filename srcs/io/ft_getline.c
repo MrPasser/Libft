@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/03 15:00:39 by skrasin           #+#    #+#             */
-/*   Updated: 2020/09/01 19:58:01 by svet             ###   ########.fr       */
+/*   Updated: 2020/10/19 12:54:09 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static inline t_list	*ft_lstsearch(size_t fd)
 	return (store);
 }
 
-int						ft_getline(const int fd, char **line)
+ssize_t					ft_getline(const int fd, char **line)
 {
 	ssize_t			len;
 	t_list			*node;
@@ -67,5 +67,5 @@ int						ft_getline(const int fd, char **line)
 	if ((nl ? ft_strappend((char **)&node->content, nl + 1) :
 		ft_strappend((char **)&node->content, node->content)) == NULL)
 		return (-1);
-	return ((**line == '\0' && !len) ? 0 : 1);
+	return ((**line == '\0' && !len) ? 0 : len);
 }
