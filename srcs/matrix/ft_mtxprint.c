@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 10:03:07 by svet              #+#    #+#             */
-/*   Updated: 2021/04/13 10:14:39 by svet             ###   ########.fr       */
+/*   Updated: 2021/04/13 16:19:43 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_mtxprint(t_matrix mtx)
 	{
 		while (j < mtx.columns)
 		{
-			ft_printf("%d", ft_mtxgetelem(mtx, i, j));
+			ft_printf("%lf", ft_mtxgetelem(mtx, i, j));
 			++j;
 		}
 		ft_putchar(j == mtx.columns ? '\n': ' ');
