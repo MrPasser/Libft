@@ -1,18 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mtxgetelem.c                                    :+:      :+:    :+:   */
+/*   ft_mtxprint.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/12 22:33:00 by svet              #+#    #+#             */
-/*   Updated: 2021/04/13 10:11:51 by svet             ###   ########.fr       */
+/*   Created: 2021/04/13 10:03:07 by svet              #+#    #+#             */
+/*   Updated: 2021/04/13 10:14:39 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_matrix.h"
+#include "ft_io.h"
 
-long double	ft_mtxgetelem(t_matrix mtx, size_t row, size_t column)
+void	ft_mtxprint(t_matrix mtx)
 {
-	return (mtx.content[row * mtx.rows + column]);
+	size_t i;
+	size_t j;
+
+	i = 0;
+	j = 0;
+	while (i < mtx.rows)
+	{
+		while (j < mtx.columns)
+		{
+			ft_printf("%d", ft_mtxgetelem(mtx, i, j));
+			++j;
+		}
+		ft_putchar(j == mtx.columns ? '\n': ' ');
+		++i;
+	}
 }
