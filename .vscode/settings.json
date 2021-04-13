@@ -1,0 +1,8 @@
+{
+	"files.associations": {
+		"_null.h": "c",
+		"ft_memory.h": "c",
+		"_size_t.h": "c",
+		"ft_matrix.h": "c"
+	}
+}

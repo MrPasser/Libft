@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mtxnew.c                                        :+:      :+:    :+:   */
+/*   ft_mtxsetelem.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/10 18:42:23 by svet              #+#    #+#             */
-/*   Updated: 2021/04/12 22:55:27 by svet             ###   ########.fr       */
+/*   Created: 2021/04/12 22:33:20 by svet              #+#    #+#             */
+/*   Updated: 2021/04/12 22:58:31 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_matrix.h"
-#include "ft_memory.h"
-#include <sys/_types/_null.h>
 
-t_matrix	*ft_mtxnew(const size_t rows, const size_t columns)
+void	ft_mtxsetelem(
+	t_matrix *mtx,
+	size_t row,
+	size_t column,
+	long double value
+)
 {
-	t_matrix	*matrix;
-
-	if (columns == 0 || rows == 0 ||
-	(matrix = (t_matrix *)ft_memalloc(sizeof(t_matrix))) == NULL ||
-	(matrix->content = (long double *)ft_memalloc(columns * rows *
-												sizeof(long double))) == NULL)
-		return (NULL);
-	return (matrix);
+	mtx->content[row * mtx->rows + column] = value;
 }
