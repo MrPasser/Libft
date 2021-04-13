@@ -17,10 +17,10 @@
 typedef struct	s_matrix
 {
 	void		**content;
-	size_t		columns;
 	size_t		rows;
+	size_t		columns;
 }				t_matrix;
 
-t_matrix		*ft_mtxnew(const size_t columns, const size_t rows);
+t_matrix		*ft_mtxnew(const size_t rows, const size_t columns);
 
 #endif

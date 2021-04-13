@@ -14,7 +14,7 @@
 #include "ft_memory.h"
 #include <sys/_types/_null.h>
 
-t_matrix	*ft_mtxnew(const size_t columns, const size_t rows)
+t_matrix	*ft_mtxnew(const size_t rows, const size_t columns)
 {
 	t_matrix	*matrix;
 	size_t		i;
