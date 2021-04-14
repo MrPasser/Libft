@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 22:33:20 by svet              #+#    #+#             */
-/*   Updated: 2021/04/12 22:58:31 by svet             ###   ########.fr       */
+/*   Updated: 2021/04/13 18:33:32 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ void	ft_mtxsetelem(
 	long double value
 )
 {
-	mtx->content[row * mtx->rows + column] = value;
+	mtx->content[row * mtx->columns + column] = value;
 }
