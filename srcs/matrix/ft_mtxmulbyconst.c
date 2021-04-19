@@ -1,18 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mtxgetelem.c                                    :+:      :+:    :+:   */
+/*   ft_mtxmulbyconst.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/12 22:33:00 by svet              #+#    #+#             */
-/*   Updated: 2021/04/15 14:18:13 by svet             ###   ########.fr       */
+/*   Created: 2021/04/15 14:31:09 by svet              #+#    #+#             */
+/*   Updated: 2021/04/15 14:41:55 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_matrix.h"
 
-long double	ft_mtxgetelem(t_matrix mtx, size_t row, size_t column)
+void	ft_mtxmulbyconst(t_matrix *mtx, long double val)
 {
-	return (mtx.content[row * mtx.columns + column]);
+	const size_t	rows = mtx->rows;
+	const size_t	columns = mtx->columns;
+	size_t			i;
+	size_t			j;
+
+	i = 0;
+	while (i < rows)
+	{
+		j = 0;
+		while (j < columns)
+		{
+			ft_mtxsetelem(mtx, i, j, ft_mtxgetelem(*mtx, i, j) * val);
+			++j;
+		}
+		++i;
+	}
 }

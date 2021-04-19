@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mtxgetelem.c                                    :+:      :+:    :+:   */
+/*   ft_vecnormalize.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/12 22:33:00 by svet              #+#    #+#             */
-/*   Updated: 2021/04/15 14:18:13 by svet             ###   ########.fr       */
+/*   Created: 2021/04/15 12:13:16 by svet              #+#    #+#             */
+/*   Updated: 2021/04/15 15:03:55 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_matrix.h"
+#include "math.h"
 
-long double	ft_mtxgetelem(t_matrix mtx, size_t row, size_t column)
+void	ft_vecnormalize(t_matrix *vec)
 {
-	return (mtx.content[row * mtx.columns + column]);
+	const long double	len = ft_veclength(*vec);
+
+	if (len > 0.0)
+		ft_mtxdivbyconst(vec, len);
 }

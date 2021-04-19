@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mtxgetelem.c                                    :+:      :+:    :+:   */
+/*   ft_mtxdivbyconst.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/12 22:33:00 by svet              #+#    #+#             */
-/*   Updated: 2021/04/15 14:18:13 by svet             ###   ########.fr       */
+/*   Created: 2021/04/15 14:39:19 by svet              #+#    #+#             */
+/*   Updated: 2021/04/15 14:41:26 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_matrix.h"
 
-long double	ft_mtxgetelem(t_matrix mtx, size_t row, size_t column)
+void	ft_mtxdivbyconst(t_matrix *mtx, long double val)
 {
-	return (mtx.content[row * mtx.columns + column]);
+	ft_mtxmulbyconst(mtx, 1 / val);
 }

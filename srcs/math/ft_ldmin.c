@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mtxgetelem.c                                    :+:      :+:    :+:   */
+/*   ft_ldmin.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/12 22:33:00 by svet              #+#    #+#             */
-/*   Updated: 2021/04/15 14:18:13 by svet             ###   ########.fr       */
+/*   Created: 2021/04/15 15:24:45 by svet              #+#    #+#             */
+/*   Updated: 2021/04/15 15:25:26 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_matrix.h"
+#include "ft_math.h"
 
-long double	ft_mtxgetelem(t_matrix mtx, size_t row, size_t column)
+long double	ft_ldmin(long double a, long double b)
 {
-	return (mtx.content[row * mtx.columns + column]);
+	return (a < b ? a : b);
 }
