@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mtxsubmtx.c                                     :+:      :+:    :+:   */
+/*   ft_matrix_memcpy.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/15 16:01:00 by svet              #+#    #+#             */
-/*   Updated: 2021/04/15 16:01:25 by svet             ###   ########.fr       */
+/*   Created: 2021/04/25 13:03:34 by svet              #+#    #+#             */
+/*   Updated: 2021/04/25 13:26:13 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_matrix.h"
-#include <sys/_types/_null.h>
 
-t_matrix	*ft_mtxaddmtx(t_matrix mtx1, t_matrix mtx2)
+int	ft_matrix_memcpy(t_matrix *dst, const t_matrix *src)
 {
-	t_matrix	*new_mtx;
-	long double	*array;
-	size_t		n;
-	size_t		i;
+	const long double	*src_content = src->content;
+	long double			*dst_content;
+	size_t				i;
+	size_t				j;
 
-	if (mtx1.rows != mtx2.rows || mtx1.columns != mtx2.columns ||
-						(new_mtx = ft_mtxnew(mtx1.rows, mtx1.columns)) == NULL)
-		return (NULL);
-	n = mtx1.rows * mtx1.columns;
+	if (dst->size1 != src->size1 || dst->size2 != src->size2)
+		return (-1);
+	dst_content = dst->content;
 	i = 0;
-	array = new_mtx->content;
-	while (i < n)
+	while (i < dst->size1)
 	{
-		array[i] = mtx1.content[i] - mtx2.content[i];
+		j = 0;
+		while (j < src->size2)
+		{
+			dst_content[dst->tda * i + j] = src_content[src->tda * i + j];
+			++j;
+		}
 		++i;
 	}
-	return (new_mtx);
+	return (0);
 }

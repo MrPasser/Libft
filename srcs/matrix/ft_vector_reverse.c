@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 12:40:16 by svet              #+#    #+#             */
-/*   Updated: 2021/04/24 12:56:21 by svet             ###   ########.fr       */
+/*   Updated: 2021/04/25 12:55:14 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,21 @@
 
 int	ft_vector_reverse(t_vector *v)
 {
-	long double		*content_start;
-	long double		*content_end;
+	const size_t	stride = v->stride;
+	long double		*content;
 	long double		tmp;
+	size_t			i;
+	size_t			j;
 
-	content_start = v->content;
-	content_end = content_start + v->size - 1;
-	while (content_end > content_start)
+	content = v->content;
+	i = 0;
+	while (i < v->size / 2)
 	{
-		tmp = *content_start;
-		*content_start = *content_end;
-		*content_end = tmp;
-		++content_start;
-		--content_end;
+		j = v->size - i - 1;
+		tmp = content[i * stride];
+		content[i * stride] = content[j * stride];
+		content[j * stride] = tmp;
+		++i;
 	}
 	return (0);
 }

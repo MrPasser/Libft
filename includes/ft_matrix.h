@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 18:34:47 by svet              #+#    #+#             */
-/*   Updated: 2021/04/24 15:08:23 by svet             ###   ########.fr       */
+/*   Updated: 2021/04/26 13:30:57 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct		s_block
 ** content	is the location of the first element in memory
 ** size		is number of vector elemnts
 ** owner	is flag to determen the owner of the block
+** stride	is a step size of the vector
 */
 
 typedef struct		s_vector
@@ -32,6 +33,7 @@ typedef struct		s_vector
 	t_block			*block;
 	long double		*content;
 	size_t			size;
+	size_t			stride;
 	int				owner;
 }					t_vector;
 
@@ -56,9 +58,9 @@ size_t				ft_block_size(const t_block *b);
 
 t_vector			*ft_vector_memalloc(size_t n);
 t_vector			*ft_vector_memalloc_from_block(t_block *b,
-										const size_t offset, const size_t n);
-t_vector			*ft_vectror_memalloc_from_vector(t_vector *w, 
-										const size_t offset, const size_t n);
+					const size_t offset, const size_t n, const size_t stride);
+t_vector			*ft_vectror_memalloc_from_vector(t_vector *w,
+					const size_t offset, const size_t n, const size_t stride);
 void				ft_vector_free(t_vector *v);
 long double			ft_vector_get(const t_vector *v, const size_t i);
 void				ft_vector_set(t_vector *v, const size_t i, long double x);
@@ -70,7 +72,7 @@ int					ft_vector_set_basis(t_vector *v, size_t i);
 int					ft_vector_memcpy(t_vector *dst, const t_vector *src);
 int					ft_vector_reverse(t_vector *v);
 int					ft_vector_swap(t_vector *v, t_vector *w);
-int					ft_vecotor_swap_elements(t_vector *v, const size_t i,
+int					ft_vecotor_swap_elemenets(t_vector *v, const size_t i,
 																const size_t j);
 long double			ft_vector_min(const t_vector *v);
 long double			ft_vector_max(const t_vector *v);
@@ -92,6 +94,44 @@ int					ft_vector_add_constant(t_vector *a, const long double x);
 int					ft_vector_axpby(const long double alpha, const t_vector *x,
 										const long double beta, t_vector *y);
 int					ft_vector_equal(const t_vector *u, const t_vector *v);
+
+t_matrix			*ft_matrix_memalloc(const size_t n1, const size_t n2);
+t_matrix			*ft_matrix_memalloc_from_block(t_block *b, const size_t n1,
+											const size_t n2, const size_t d2);
+t_vector			*ft_vector_memalloc_row_from_matrix(t_matrix *m,
+																const size_t i);
+t_vector			*ft_vector_memalloc_col_from_matrix(t_matrix *m,
+																const size_t j);
+void				ft_matrix_free(t_matrix *m);
+void				ft_matrix_set_zero(t_matrix *m);
+void				ft_matrix_set_identity(t_matrix *m);
+void				ft_matrix_set_all(t_matrix *m, long double x);
+int					ft_matrix_memcpy(t_matrix *dst, const t_matrix *src);
+int					ft_matrix_swap(t_matrix *m1, t_matrix *m2);
+int					ft_matrix_swap_rows(t_matrix *m, const size_t i,
+																const size_t j);
+int					ft_matrix_swap_columns(t_matrix *m, const size_t i,
+																const size_t j);
+int					ft_matrix_swap_rowcol(t_matrix *m, const size_t i,
+																const size_t j);
+int					ft_matrix_transpose(t_matrix *m);
+int					ft_matrix_transpose_memcpy(t_matrix *dst, const t_matrix *src);
+long double			ft_matrix_max(const t_matrix *m);
+long double			ft_matrix_min(const t_matrix *m);
+void				ft_matrix_minmax(const t_matrix *m, long double *min_out,
+														long double *max_out);
+void				ft_matrix_max_index(const t_matrix *m, size_t *imax,
+																size_t *jmax);
+void				ft_matrix_min_index(const t_matrix *m, size_t *imin,
+																size_t *jmax);
+int					ft_matrix_eqaul(const t_matrix *a, const t_matrix *b);
+int					ft_matrix_add(t_matrix *a, const t_matrix *b);
+int					ft_matrix_sub(t_matrix *a, const t_matrix *b);
+int					ft_matrix_mul_elements(t_matrix *a, const t_matrix *b);
+int					ft_matrix_div_elements(t_matrix *a, const t_matrix *b);
+int					ft_matrix_scale(t_matrix *a, const long double x);
+int					ft_matrix_add_constant(t_matrix *a, const long double x);
+int					ft_matrix_add_diagonal(t_matrix *a, const long double x);
 
 
 t_matrix		*ft_mtxnew(size_t rows, size_t columns);

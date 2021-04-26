@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/26 13:07:19 by svet              #+#    #+#             */
-/*   Updated: 2021/04/13 15:53:00 by svet             ###   ########.fr       */
+/*   Updated: 2021/04/24 20:42:16 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,6 @@ char	*ft_strappend(char **dst, char const *src)
 {
 	if (dst == NULL || *dst == NULL || src == NULL)
 		return (NULL);
-	return (ft_memappend((void **)dst, src, ft_strlen(*dst), ft_strlen(src) + 1));
+	return (ft_memappend((void **)dst, src, ft_strlen(*dst),
+														ft_strlen(src) + 1));
 }

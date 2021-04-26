@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mtxtranspose.c                                  :+:      :+:    :+:   */
+/*   ft_matrix_set_identity.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/16 16:43:20 by svet              #+#    #+#             */
-/*   Updated: 2021/04/16 19:41:34 by svet             ###   ########.fr       */
+/*   Created: 2021/04/24 20:51:07 by svet              #+#    #+#             */
+/*   Updated: 2021/04/24 20:58:40 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_matrix.h"
-#include <sys/_types/_null.h>
 
-t_matrix		*ft_mtxtranspose(t_matrix mtx)
+void	ft_matrix_set_identity(t_matrix *m)
 {
-	t_matrix	*new_mtx;
-	size_t	i;
-	size_t	j;
+	const size_t p = m->size1;
+	const size_t q = m->size2;
+	long double *content = m->content;
+	size_t i;
+	size_t j;
 
-	if (mtx.rows != mtx.columns ||
-						(new_mtx = ft_mtxnew(mtx.rows, mtx.columns)) == NULL)
-		return (NULL);
 	i = 0;
-	while (i < mtx.rows)
+	while (i < p)
 	{
 		j = 0;
-		while (j < mtx.columns)
+		while (j < q)
 		{
-			ft_mtxsetelem(&mtx, i, j, ft_mtxgetelem(mtx, j, i));
+			content[i * m->tda + j] = i == j ? 1.0L : 0.0L;
 			++j;
 		}
 		++i;
 	}
-	return (new_mtx);
 }

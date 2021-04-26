@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 18:10:53 by svet              #+#    #+#             */
-/*   Updated: 2021/04/24 12:07:16 by svet             ###   ########.fr       */
+/*   Updated: 2021/04/26 12:48:11 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ t_vector	*ft_vector_memalloc(size_t n)
 	v->block = b;
 	v->content = b->content;
 	v->size = n;
+	v->stride = 1;
 	v->owner = 1;
 	return (v);
 }

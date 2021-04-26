@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mtxnew.c                                        :+:      :+:    :+:   */
+/*   ft_matrix_set_zero.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/10 18:42:23 by svet              #+#    #+#             */
-/*   Updated: 2021/04/15 15:21:38 by svet             ###   ########.fr       */
+/*   Created: 2021/04/24 20:58:27 by svet              #+#    #+#             */
+/*   Updated: 2021/04/24 20:59:09 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_matrix.h"
-#include "ft_memory.h"
-#include <sys/_types/_null.h>
 
-t_matrix	*ft_mtxnew(size_t rows, size_t columns)
+void	ft_matrix_set_zero(t_matrix *m)
 {
-	t_matrix	*matrix;
+	const size_t p = m->size1;
+	const size_t q = m->size2;
+	long double *content = m->content;
+	size_t i;
+	size_t j;
 
-	if (columns < 1 || rows < 1 ||
-	(matrix = (t_matrix *)ft_memalloc(sizeof(t_matrix))) == NULL ||
-	(matrix->content = (long double *)ft_memalloc(columns * rows *
-												sizeof(long double))) == NULL)
-		return (NULL);
-	matrix->rows = rows;
-	matrix->columns = columns;
-	return (matrix);
+	i = 0;
+	while (i < p)
+	{
+		j = 0;
+		while (j < q)
+		{
+			content[i * m->tda + j] = 0.0L;
+			++j;
+		}
+		++i;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 14:27:39 by svet              #+#    #+#             */
-/*   Updated: 2021/04/24 14:30:52 by svet             ###   ########.fr       */
+/*   Updated: 2021/04/25 12:36:17 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,18 @@
 
 int	ft_vector_add(t_vector *a, const t_vector *b)
 {
-	const size_t	n = a->size;
+	const size_t	a_stride = a->stride;
+	const size_t	b_stride = b->stride;
 	long double		*a_content;
 	long double		*b_content;
 	size_t			i;
 
-	if (n != b->size)
+	if (a->size != b->size)
 		return (-1);
 	a_content = a->content;
 	b_content = b->content;
 	i = 0;
-	while (i < n)
-		a_content[i] += b_content[i];
+	while (i < a->size)
+		a_content[i * a_stride] += b_content[i * b_stride];
 	return (0);
 }

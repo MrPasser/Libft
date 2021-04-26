@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_vecdot.c                                        :+:      :+:    :+:   */
+/*   ft_matrix_free.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/15 15:08:18 by svet              #+#    #+#             */
-/*   Updated: 2021/04/17 11:43:06 by svet             ###   ########.fr       */
+/*   Created: 2021/04/24 20:14:45 by svet              #+#    #+#             */
+/*   Updated: 2021/04/24 20:40:21 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "ft_matrix.h"
-# include "math.h"
+#include "ft_memory.h"
+#include "ft_matrix.h"
+#include <sys/_types/_null.h>
 
-long double	ft_vecdot(t_matrix vec1, t_matrix vec2) //avoid 1x1 mtx
+void	ft_matrix_free(t_matrix *m)
 {
-	const size_t	n = fmaxl(fminl(vec1.rows, vec2.rows),
-										fminl(vec1.columns, vec2.columns));
-	long double		comp;
-	size_t			i;
-
-	comp = 0.0;
-	i = 0;
-	while (i < n)
-	{
-		comp += vec1.content[i] * vec2.content[i];
-		++i;
-	}
-	return (comp);
+	if (m == NULL)
+		return ;
+	if (m->owner == 1)
+		ft_block_free(m->block);
+	ft_memdel((void **)&m);
 }
