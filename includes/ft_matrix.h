@@ -6,7 +6,7 @@
 /*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 18:34:47 by svet              #+#    #+#             */
-/*   Updated: 2021/04/26 17:59:10 by svet             ###   ########.fr       */
+/*   Updated: 2021/05/03 14:46:38 by svet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,5 +132,20 @@ int					ft_matrix_div_elements(t_matrix *a, const t_matrix *b);
 int					ft_matrix_scale(t_matrix *a, const long double x);
 int					ft_matrix_add_constant(t_matrix *a, const long double x);
 int					ft_matrix_add_diagonal(t_matrix *a, const long double x);
+int					ft_matrix_get_row(t_vector *v, const t_matrix *m,
+																const size_t i);
+int					ft_matrix_get_col(t_vector *v, const t_matrix *m,
+																const size_t j);
+int					ft_matrix_set_row(t_matrix *m, const size_t i,
+															 const t_vector *v);
+int					ft_matrix_set_col(t_matrix *m, const size_t j,
+															const t_vector *v);
+long double			ft_matrix_get(const t_matrix *m, const size_t i,
+																const size_t j);
+void				ft_matrix_set(t_matrix *m, const size_t i, const size_t j,
+														const long double x);
+long double			*ft_matrix_ptr(t_matrix *m, const size_t i, const size_t j);
+const long double	*ft_matrix_const_ptr(const t_matrix *m, const size_t i,
+																const size_t j);
 
 #endif
